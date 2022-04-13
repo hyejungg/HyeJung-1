@@ -5,20 +5,10 @@ import java.util.Scanner
 class KStack<T>{
     private val stack = mutableListOf<T>()
 
-    fun push(element: T){
-        stack.add(element)
-    }
-    fun pop(): T?{
-        if(stack.size == 0)
-            return null
-        return stack.removeLast()
-    }
-    fun size(): Int{
-        return stack.size;
-    }
-    fun find(element: T): Boolean{
-        return stack.contains(element)
-    }
+    fun push(element: T) = stack.add(element)
+    fun pop(): T? = if (stack.isEmpty()) null else stack.removeLast()
+    fun size() = stack.size
+    fun find(element: T) = stack.contains(element)
 }
 
 fun main() {
@@ -26,7 +16,6 @@ fun main() {
     val round = sc.nextInt()
 
     for (idx in 0..round) {
-        println(idx)
         val stack = KStack<Char>()
         val nowPS = sc.next()
         var isPVS = true
@@ -42,9 +31,6 @@ fun main() {
                 stack.pop()
             }
         }
-        if(isPVS && stack.size() == 0)
-            println("YES")
-        else
-            println("NO")
+        if (isPVS && stack.size() == 0) println("YES") else println("NO")
     }
 }
