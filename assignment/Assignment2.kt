@@ -2,7 +2,7 @@ package assignment
 
 import java.util.Scanner
 
-class KStack<T>{
+class KStack<T> {
     private val stack = mutableListOf<T>()
 
     fun push(element: T) = stack.add(element)
@@ -15,7 +15,7 @@ fun main() {
     val sc = Scanner(System.`in`)
     val round = sc.nextInt()
 
-    for (idx in 0..round) {
+    repeat(round) {
         val stack = KStack<Char>()
         val nowPS = sc.next()
         var isPVS = true
